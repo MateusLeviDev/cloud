@@ -5,3 +5,5 @@
  <br>
 `mongoose`: para fazer essa conexão. mapeamento de módulo, criar controller, conectar ângulo de dados
 </p>
+
+https://github.com/GustaGitHub/controle_de_estoque/blob/main/controllers/employees.js
