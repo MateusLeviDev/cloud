@@ -1,0 +1,23 @@
+{
+  "name": "crud-node-mongodb",
+  "version": "1.0.0",
+  "description": "Projeto Crud Back-end e MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateusLeviDev/crud-node-mongodb.git"
+  },
+  "author": "Mateus Levi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MateusLeviDev/crud-node-mongodb/issues"
+  },
+  "homepage": "https://github.com/MateusLeviDev/crud-node-mongodb#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
