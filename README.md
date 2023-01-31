@@ -64,3 +64,9 @@ module.exports = {
 ```
 
 - Nessa função `async store` pegamos os dado no `.body`, em seguida criamos uma nova variável chamada "dataCreate", essa var recebe os valores dos cmapos do body e vai para `.create` do banco de dados para criar na tabela um novo registro. 
+
+## Cadastrando dados:
+
+<p>
+criando outro request no body pelo formato json inserimo os dados. Pegando os valores da `const { nome, senha }` com o parâmetro `req.body` jogando o valores pro `dataCreate` e em seguida pro cretate do banco de dados.
+</p>
