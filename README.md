@@ -105,5 +105,6 @@ async update(req, res){
 <p>
 ele chama a url trazendo os valores. colocamos os valores no dataCreate, chama o findByIdAndUpdate.
 
--`new: true`: queremos que ele liste depois de alterado. 
+- `new: true`: queremos que ele liste depois de alterado. 
+ 
 </p>
