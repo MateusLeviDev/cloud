@@ -2,7 +2,14 @@ const Usuario = require('../model/usuario');
 
 module.exports = {
     async index(req, res){
-        const usuarios = await Usuario.find() //find equivalente ao select do sql
+        const usuarios = await Usuario.find() //find equivalente ao select do sql 
+        // [select * from ususario]
+        res.json(usuarios)
+    },
+
+    async detail(req, res){
+        const {_id} = req.params; //parâmetro da url do detail
+        const usuarios = await Usuario.findOne({_id}) // [select * usuario where id = ?]
         res.json(usuarios)
     },
 
