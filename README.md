@@ -23,3 +23,11 @@ async(err) => {
 <br>
 
 `diferente do mysql o mongodb ele verifica se tem um model  criado, se não tem a tabela no banco ele já cria, não precisamos fazer uma inicialização no myql, criar database e etc. ou seja, o processo é mais simples com o mongodb.`
+<br> 
+
+```sh
+module.exports = {
+    async index(req, res){
+        const usuario = await Usuario.find()
+        res.json(usuario)
+```
