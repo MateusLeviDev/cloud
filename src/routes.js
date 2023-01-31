@@ -18,6 +18,7 @@ routes.get('/', function(req, res){
 routes.get('/usuario', UsuarioController.index) 
 routes.get('/usuario/:_id', UsuarioController.detail) 
 routes.post('/usuario', UsuarioController.store) 
+routes.delete('/usuario/:_id', UsuarioController.delete) 
 
 module.exports = routes; //exportar todas as rotas 
 

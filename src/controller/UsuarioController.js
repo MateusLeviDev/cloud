@@ -21,6 +21,12 @@ module.exports = {
         }
         const usuarios = await Usuario.create(dataCreate) 
         res.json(usuarios)
+    },
+
+    async delete(req, res){
+        const {_id} = req.params; //parâmetro da url do detail
+        const usuarios = await Usuario.findByIdAndDelete({_id}) 
+        res.json(usuarios)
     }
 }
 
