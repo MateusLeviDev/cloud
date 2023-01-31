@@ -27,6 +27,16 @@ module.exports = {
         const {_id} = req.params; //parâmetro da url do detail
         const usuarios = await Usuario.findByIdAndDelete({_id}) 
         res.json(usuarios)
+    },
+
+    async update(req, res){
+        const { _id, nome, senha } = req.body; //quando fazemos uma requisição tem a opção para colocar o body, passando as informações via body
+        let dataCreate = {} //vai receber um json. só vale dentro do escopo
+        dataCreate = { 
+            nome, senha 
+        }
+        const usuarios = await Usuario.findByIdAndUpdate({_id}, dataCreate, {new: true}) //listaremos um novo registro ao inves do antigo registro
+        res.json(usuarios)
     }
 }
 
