@@ -84,3 +84,6 @@ criando outro request no body pelo formato json inserimos os dados. Pegando os v
 ```
 
 - o nome do parâmetro vai ser o valor dele. 
+- inserindo um valor na detail `req.params` 
+- automaticamente vai cair no `findOne(_id)`
+- atribuindo o valor
