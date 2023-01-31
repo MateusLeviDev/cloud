@@ -1,13 +1,22 @@
-const express = require('express')
+const express = require('express');
+const UsuarioController = require('./controller/UsuarioController');
 
 const routes = express.Router(); //router faz a criação de rotas 
 
-routes.get('/', function(req, res){
-    /* req requisição trazer para back
-    res enviar dados para front  */
+
+/* routes.get('/', function(req, res){
+    req requisição trazer para back
+    res enviar dados para front
 
     res.json({message: "Bem-vindo ao back-end MongoDB"})
+})  */
+
+routes.get('/', function(req, res){
+    res.json({message: "Bem-vindo ao back-end MongoDB"})
 }) 
+
+routes.get('/usuario', UsuarioController.index) 
+routes.post('/usuario', UsuarioController.store) 
 
 module.exports = routes; //exportar todas as rotas 
 
