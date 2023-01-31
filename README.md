@@ -1,5 +1,11 @@
 ## crud-node-mongodb
 ### Back-end com Node.js e MongoDB
+
+```
+
+`npm run start`
+
+```
 <p>
 `Model`: mapeamento de tabela no banco de dados. fazendo conexão com a tabela do banco com nosso back-end. devemos ter o model para referênciar.
  <br>
@@ -41,3 +47,5 @@ module.exports = {
 - Res: para enviar dados
 - `const usuario`: para armazenar os usuários
 - `find()`: equivalente ao select do sql
+- Conclusão: a função index listará todos os dados
+- Agora teremo agora deverá ser criada uma rota que execute isso.
