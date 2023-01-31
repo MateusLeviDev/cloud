@@ -68,5 +68,19 @@ module.exports = {
 ## Cadastrando dados:
 
 <p>
-criando outro request no body pelo formato json inserimo os dados. Pegando os valores da `const { nome, senha }` com o parâmetro `req.body` jogando o valores pro `dataCreate` e em seguida pro cretate do banco de dados.
+criando outro request no body pelo formato json inserimos os dados. Pegando os valores da `const { nome, senha }` com o parâmetro `req.body` jogando o valores pro `dataCreate` e em seguida pro cretate do banco de dados.
 </p>
+
+```
+  async detail(req, res){
+        const {_id} = req.params; //parâmetro da url do detail
+        const usuarios = await Usuario.findOne(_id) // [select * usuario where id = ?]
+        res.json(usuarios)
+    }
+    
+   -------------- ROTA ------------------
+    
+    routes.get('/usuario:_id', UsuarioController.detail) 
+```
+
+- o nome do parâmetro vai ser o valor dele. 
