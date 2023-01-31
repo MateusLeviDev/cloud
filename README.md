@@ -87,3 +87,23 @@ criando outro request no body pelo formato json inserimos os dados. Pegando os v
 - inserindo um valor na detail `req.params` 
 - automaticamente vai cair no `findOne(_id)`
 - atribuindo o valor
+
+## update 
+
+```
+async update(req, res){
+        const { _id, nome, senha } = req.body; //quando fazemos uma requisição tem a opção para colocar o body, passando as informações via body
+        let dataCreate = {} //vai receber um json. só vale dentro do escopo
+        dataCreate = { 
+            nome, senha 
+        }
+        const usuarios = await Usuario.findByIdAndUpdate({_id}, dataCreate, {new: true}) //listaremos um novo registro ao inves do antigo registro
+        res.json(usuarios)
+    }
+```
+
+<p>
+ele chama a url trazendo os valores. colocamos os valores no dataCreate, chama o findByIdAndUpdate.
+
+-`new: true`: queremos que ele liste depois de alterado. 
+</p>
