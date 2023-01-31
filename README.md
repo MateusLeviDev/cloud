@@ -34,3 +34,10 @@ module.exports = {
         const usuario = await Usuario.find()
         res.json(usuario)
 ```
+
+- Mais acima é a criação do módulo.exports. Todas essas funções aqui de dentro vão ficar exportadas para poderem ser usadas em outras páginas como por exemplo em rotas. Primeira função de listagem criada
+- `async/await`: async indica que será uma função assíncrona e esse await inidica onde ele deve esperar. Ou seja, quando é criada a função, colocamos ela pra receber, e colocamos antes de retornar `const usuario` ele deve esperar o `Usuario.find()` para retornar e listar, de fato.
+- Req: Para trazer dado
+- Res: para enviar dados
+- `const usuario`: para armazenar os usuários
+- `find()`: equivalente ao select do sql
