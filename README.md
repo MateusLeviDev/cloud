@@ -49,3 +49,18 @@ module.exports = {
 - `find()`: equivalente ao select do sql
 - Conclusão: a função index listará todos os dados
 - Agora teremo agora deverá ser criada uma rota que execute isso.
+
+
+```
+ async store(req, res){
+        const { nome, senha } = req.body; //quando fazemos uma requisição tem a opção para colocar o body, passando as informações via body
+        var dataCreate = {} //vai receber um json 
+        dataCreate = { 
+            nome, senha 
+        }
+        const usuarios = await Usuario.create(dataCreate) 
+        res.json(usuarios)
+    }
+```
+
+- Nessa função `async store` pegamos os dado no `.body`, em seguida criamos uma nova variável chamada "dataCreate", essa var recebe os valores dos cmapos do body e vai para `.create` do banco de dados para criar na tabela um novo registro. 
