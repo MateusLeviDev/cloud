@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres
+    container_name: contract-postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: contract_db
+    ports:
+      - "5433:5432"
