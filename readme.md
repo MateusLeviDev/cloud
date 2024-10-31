@@ -108,8 +108,37 @@ cron:
 - configured using cron.yaml
 - gcloud app deploy cron.yaml. performs a HTTP GET request to the configured url on schedule
 
+#### how i go from v1 to v2 without downtime?
+
+- do this on the weekend
+
+- 1 : im very confident. deploy and shift all traffic at once.
+
+```
+gcloud app deploy
+```
+
+- 2 : i want to manage the migration from v1 to v2
+- deploy v2 without shifting traffic (--no-promote)
+
+```
+gcloud app deploy --no-promote
+```
+
+- gradualmente shift traffic to v2 add -migrate option. not supported by app engine flexible. or control de pace `gcloud app services set-traffic --splits=v3=1`
+
 - Configuração de Tráfego e Versionamento:
 Com o controle de versão, você pode implementar múltiplas versões de uma aplicação e dividir o tráfego entre elas. Isso facilita testes A/B e lançamentos incrementais, gerenciados com comandos como gcloud app services set-traffic.
 
 - Explorar práticas de cache (ex.: Memcache) e sessões para melhorar a eficiência e performance dos aplicativos.
 - Ambiente Flexível: Baseado em contêineres Docker, oferece maior flexibilidade para escolher a linguagem, a configuração do sistema e o tamanho das instâncias. É recomendado para cargas de trabalho que exigem mais controle sobre o ambiente.
+
+
+### App engine - Remember
+
+- is regional. you cannot change an app region
+- good option for simple ms. is not as powerful as `kubernetes`.
+- o controle de versões é feito por serviço, e o App Engine serve apenas como o ambiente de execução e gerenciamento dos serviços e suas versões.
+- você pode ter um único App Engine que representa o ambiente geral do seu aplicativo, mas dentro dele, é possível configurar e gerenciar múltiplos serviços.
+- i dont want to alloe more that 10 instances for an app engine app: set max_instances in app.yaml. `basic_scaling > max_instances: 10`
+- deploy new version without shifting traffic: `gclou app engine deploy --no-promote` : cria uma nova versão do service, mas o traffic ainda vai pra old version. podemos testar a nova e migrar aos poucos a nova versão
