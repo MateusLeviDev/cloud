@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres
+    container_name: platform-template
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: platform-template-db
+    ports:
+      - "5432:5432"
+
+  pubsub-emulator:
+    image: google/cloud-sdk:latest
+    volumes:
+      - ./utils/setup_pubsub.sh:/setup_pubsub.sh
+    entrypoint: ["/bin/bash", "/setup_pubsub.sh"]
+    environment:
+      - CLOUDSDK_CORE_PROJECT=bullla-one-d-apps-cn
+    ports:
+      - "8085:8085"
